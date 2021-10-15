@@ -1,0 +1,8 @@
+node_modules
+build
+README.md
+coverage
+.vscode
+.DS_STORE
+.env
+tmp
