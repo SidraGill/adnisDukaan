@@ -35,7 +35,6 @@ export default class AdminsController {
     //     // .htmlView('emails/welcome', { name: 'Virk' })
     // })
 
-
     const admin = await this.model.create(payload)
 
     return response.ok(admin)

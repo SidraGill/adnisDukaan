@@ -22,9 +22,7 @@ import Route from '@ioc:Adonis/Core/Route'
 
 Route.resource('admin', 'AdminsController').apiOnly()
 
-
 // Route.post('login','AdminsController.login')
-
 
 Route.post('login', async ({ auth, response }) => {
 
