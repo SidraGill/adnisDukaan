@@ -32,13 +32,13 @@ export default class VendorsController {
 
   public async show({ params, response }: HttpContextContract) {
 
-    const { id }: { id: Number } = params
+    const { id } = params
     let admin = await this.model.findOrFail(id);
     return response.ok(admin);
   }
 
   public async update({ params, request, response }: HttpContextContract) {
-    const { id }: { id: Number } = params;
+    const { id } = params;
     const payload: any = await request.validate(this.updateValidator)
 
     const item = await this.model.findOrFail(id);
@@ -49,7 +49,7 @@ export default class VendorsController {
 
   public async destroy({ params, response }: HttpContextContract) {
 
-    const { id }: { id: Number } = params
+    const { id } = params
 
     const ext = await this.model.findOrFail(id);
     ext.delete();

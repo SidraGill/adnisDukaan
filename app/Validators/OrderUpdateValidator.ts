@@ -36,7 +36,6 @@ export default class OrderUpdateValidator {
 		]),
 	})
 
-})
 
 	/**
 	 * Custom messages for validation failures. You can make use of dot notation `(.)`
@@ -49,5 +48,5 @@ export default class OrderUpdateValidator {
 	 * }
 	 *
 	 */
-  public messages = {}
+//   public messages = {}
 }

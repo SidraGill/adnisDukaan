@@ -4,7 +4,7 @@ import Admin from 'App/Models/Admin'
 import AdminCreateValidator from 'App/Validators/AdminCreateValidator';
 import AdminUpdateValidator from 'App/Validators/AdminUpdateValidator';
 import ImageHelper from 'App/Helpers/ImageHelper'
-import Mail from '@ioc:Adonis/Addons/Mail'
+// import Mail from '@ioc:Adonis/Addons/Mail'
 
 export default class AdminsController {
 
@@ -42,13 +42,13 @@ export default class AdminsController {
 
   public async show({ params, response }: HttpContextContract) {
 
-    const { id }: { id: Number } = params
+    const { id } = params
     let admin = await this.model.findOrFail(id);
     return response.ok(admin);
   }
 
   public async update({ params, request, response }: HttpContextContract) {
-    const { id }: { id: Number } = params;
+    const { id } = params;
     const payload: any = await request.validate(this.updateValidator)
 
     const item = await this.model.findOrFail(id);
@@ -59,7 +59,7 @@ export default class AdminsController {
 
   public async destroy({ params, response }: HttpContextContract) {
 
-    const { id }: { id: Number } = params
+    const { id } = params
 
     const ext = await this.model.findOrFail(id);
     ext.delete();
@@ -68,7 +68,7 @@ export default class AdminsController {
 
   }
 
-  public async login({ auth }) {
+  public async login({ auth ,request}) {
 
     const data = schema.create({
       email: schema.string({ escape: true }, [
@@ -80,7 +80,7 @@ export default class AdminsController {
 
     })
 
-    const payload: any = await request.validate({ schema: data })
+    // const payload: any = await request.validate({ schema: data })
 
     const email = "admin@dukaan.com"
     const password = "Hello2021"

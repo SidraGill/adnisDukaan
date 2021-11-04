@@ -5,7 +5,7 @@
  * file.
  */
 
-import admin from 'App/Models/admin'
+import admin from 'App/Models/Admin'
 
 declare module '@ioc:Adonis/Addons/Auth' {
   /*

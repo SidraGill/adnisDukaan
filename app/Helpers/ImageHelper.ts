@@ -4,8 +4,6 @@ import Application from '@ioc:Adonis/Core/Application'
 
 let ImageHelper = exports = module.exports = {}
 
-
-
 ImageHelper.Upload = function (image, path) {
 
   if (image && typeof (image) !== 'string') {
@@ -14,8 +12,7 @@ ImageHelper.Upload = function (image, path) {
     let name = `${image.clientName}_ ${rnd}.${image.extname}`;
     image.clientName = name;
 
-    let img
-    img = image.move(Application.tmpPath(path))
+    image.move(Application.tmpPath(path))
     return `${path}/${name}`
 
   }
@@ -25,3 +22,5 @@ ImageHelper.Upload = function (image, path) {
 
 
 }
+
+export default ImageHelper

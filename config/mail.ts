@@ -8,9 +8,9 @@
 import Env from '@ioc:Adonis/Core/Env'
 import { MailConfig } from '@ioc:Adonis/Addons/Mail'
 
+// import { MailDrivers } from '@ioc:Adonis/Addons/Mail'
 
 declare module '@ioc:Adonis/Addons/Mail' {
-  import { MailDrivers } from '@ioc:Adonis/Addons/Mail'
 
   interface MailersList {
     smtp: MailDrivers['smtp'],
